@@ -44,6 +44,39 @@
 for (const album of musicCollection) {
     console.log(`${album.title} - ${album.artist} (${album.year})`);
 }
+
+//2. 
+
+const chefsSpecialty = new Map([
+    ["Пицца 'Маргарита'", "Виктор"],
+    ["Пицца 'Пепперони'", "Виктор"],
+    ["Суши 'Филадельфия'", "Ольга"],
+    ["Суши 'Калифорния'", "Ольга"],
+    ["Тирамису", "Дмитрий"],
+    ["Чизкейк", "Дмитрий"]
+]);
+
+const clientOrders = new Map();
+
+const clientAlexey = { name: "Алексей" };
+const clientMaria = { name: "Мария" };
+const clientIrina = { name: "Ирина" };
+
+clientOrders.set(clientAlexey, ["Пицца 'Пепперони'", "Тирамису"]);
+clientOrders.set(clientMaria, ["Суши 'Калифорния'", "Пицца 'Маргарита'"]);
+clientOrders.set(clientIrina, ["Чизкейк"]);
+
+console.log("Текущие заказы:");
+
+clientOrders.forEach((order, client) => {
+    console.log(`${client.name} заказал: ${order.join(", ")}`);
+});
+
+console.log("\nСпециализации поваров:");
+
+chefsSpecialty.forEach((chef, dish) => {
+    console.log(`${dish} - повор: ${chef}`);
+});
     </script>
 </body>
 </html>
